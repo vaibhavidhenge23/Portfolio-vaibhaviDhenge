@@ -38,9 +38,9 @@ export default function Home() {
   });
 
   const onSubmit = (data: InsertMessage) => {
-    contactMutation.mutate(data, {
-      onSuccess: () => form.reset(),
-    });
+    const subject = encodeURIComponent(`Message from ${data.name}`);
+    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
+    window.location.href = `mailto:vaibhavidhenge2302@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -357,28 +357,28 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-2xl font-bold mb-6 font-display">Let's work together!</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display text-primary">Let's work together!</h3>
               <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
                 I'm currently looking for new opportunities as a Full Stack Java Developer. 
                 Whether you have a question or just want to say hi, I'll try my best to get back to you!
               </p>
 
               <div className="space-y-6">
-                <a href="mailto:vaibhavi@example.com" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
+                <a href="mailto:vaibhavidhenge2302@gmail.com" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
                   <div className="p-3 bg-background rounded-lg border border-border group-hover:border-primary/50 transition-colors">
-                    <Mail className="w-6 h-6" />
+                    <Mail className="w-6 h-6 text-accent" />
                   </div>
-                  <span className="font-medium">vaibhavi@example.com</span>
+                  <span className="font-medium">vaibhavidhenge2302@gmail.com</span>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
                   <div className="p-3 bg-background rounded-lg border border-border group-hover:border-primary/50 transition-colors">
-                    <Linkedin className="w-6 h-6" />
+                    <Linkedin className="w-6 h-6 text-accent" />
                   </div>
                   <span className="font-medium">LinkedIn Profile</span>
                 </a>
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
                   <div className="p-3 bg-background rounded-lg border border-border group-hover:border-primary/50 transition-colors">
-                    <Github className="w-6 h-6" />
+                    <Github className="w-6 h-6 text-accent" />
                   </div>
                   <span className="font-medium">GitHub Profile</span>
                 </a>
@@ -435,11 +435,10 @@ export default function Home() {
                   />
                   <Button 
                     type="submit" 
-                    className="w-full h-12 text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all"
-                    disabled={contactMutation.isPending}
+                    className="w-full h-12 text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all bg-primary hover:bg-primary/90"
                   >
-                    {contactMutation.isPending ? "Sending..." : "Send Message"}
-                    {!contactMutation.isPending && <ArrowRight className="ml-2 w-4 h-4" />}
+                    Send Message
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </form>
               </Form>
@@ -449,10 +448,21 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border bg-background text-center">
+      <footer className="py-12 border-t border-border bg-card/50 backdrop-blur-sm text-center">
         <div className="container mx-auto px-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Vaibhavi. Built with React & Spring Boot.
+          <div className="flex justify-center gap-6 mb-8">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Github className="w-6 h-6" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="mailto:vaibhavidhenge2302@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-muted-foreground text-sm font-medium tracking-wide">
+            © {new Date().getFullYear()} VAIBHAVI. Built with Passion & Code.
           </p>
         </div>
       </footer>

@@ -8,48 +8,48 @@
   --font-body: 'Inter', sans-serif;
   --font-display: 'Outfit', sans-serif;
 
-  /* Minimal Dark Mode (Premium Feel) */
-  --background: 222 47% 11%; /* #0F172A */
-  --foreground: 210 40% 92%; /* #E5E7EB approximation */
+  /* Premium Developer Dark Theme */
+  --background: 222 47% 4%; /* Near black #060910 */
+  --foreground: 210 40% 92%; /* Off-white #E5E7EB */
   
-  --primary: 142 70% 45%; /* #22C55E */
-  --primary-foreground: 144 70% 10%;
+  --primary: 221 83% 53%; /* Electric Blue #2563EB */
+  --primary-foreground: 210 40% 98%;
   
-  --secondary: 217 33% 17%;
+  --secondary: 222 47% 11%;
   --secondary-foreground: 210 40% 98%;
   
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 222 47% 11%;
+  --muted-foreground: 215 16% 65%; /* Gray #9CA3AF approximation */
   
-  --accent: 199 89% 60%; /* #38BDF8 */
+  --accent: 199 89% 60%; /* Sky Blue #38BDF8 */
   --accent-foreground: 222 47% 11%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 217 33% 20%;
-  --input: 217 33% 20%;
-  --ring: 142 70% 45%;
+  --border: 222 47% 15%;
+  --input: 222 47% 15%;
+  --ring: 221 83% 53%;
   
-  --card: 222 47% 17%; /* #1E293B */
+  --card: 222 47% 7%; /* Darker card #0F172A approx */
   --card-foreground: 210 40% 92%;
-  --card-border: 217 33% 25%;
+  --card-border: 222 47% 12%;
 
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: 222 47% 11%;
+  --background: 222 47% 4%;
   --foreground: 210 40% 92%;
   
-  --primary: 142 70% 45%;
-  --primary-foreground: 144 70% 10%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
   
-  --secondary: 217 33% 17%;
+  --secondary: 222 47% 11%;
   --secondary-foreground: 210 40% 98%;
   
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 222 47% 11%;
+  --muted-foreground: 215 16% 65%;
   
   --accent: 199 89% 60%;
   --accent-foreground: 222 47% 11%;
@@ -57,13 +57,13 @@
   --destructive: 0 62% 30%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 217 33% 20%;
-  --input: 217 33% 20%;
-  --ring: 142 70% 45%;
+  --border: 222 47% 15%;
+  --input: 222 47% 15%;
+  --ring: 221 83% 53%;
   
-  --card: 222 47% 17%;
+  --card: 222 47% 7%;
   --card-foreground: 210 40% 92%;
-  --card-border: 217 33% 25%;
+  --card-border: 222 47% 12%;
 }
 
 @layer base {
