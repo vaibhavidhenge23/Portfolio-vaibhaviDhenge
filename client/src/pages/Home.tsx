@@ -1,29 +1,28 @@
-import { motion } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ArrowRight, 
-  Briefcase, 
-  GraduationCap, 
-  Database, 
-  Server, 
-  Layout, 
-  Code 
-} from "lucide-react";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { api, type InsertMessage } from "@shared/routes";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Briefcase,
+  Database,
+  Github,
+  GraduationCap,
+  Layout,
+  Linkedin,
+  Mail,
+  Server
+} from "lucide-react";
+import { useForm } from "react-hook-form";
 
 import Navigation from "@/components/Navigation";
-import { SectionHeading } from "@/components/SectionHeading";
 import { ProjectCard } from "@/components/ProjectCard";
-import { useContact } from "@/hooks/use-contact";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Badge } from "@/components/ui/badge";
+import { useContact } from "@/hooks/use-contact";
 
 export default function Home() {
   const contactMutation = useContact();
@@ -69,7 +68,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight text-foreground"
             >
-              Vaibhavi.
+              Vaibhavi Dhenge
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -98,9 +97,9 @@ export default function Home() {
               <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1">
                 <a href="#projects">View Projects</a>
               </Button>
-              <Button variant="outline" size="lg" className="text-base px-8 h-12 hover:-translate-y-1 transition-transform">
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
-              </Button>
+             {/* <Button variant="outline" size="lg" className="text-base px-8 h-12 hover:-translate-y-1 transition-transform">
+                <a href="resume_vaibhavi.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+              </Button>*/}
             </motion.div>
           </div>
         </div>
@@ -190,7 +189,7 @@ export default function Home() {
                 {/* Date/Label - Right on desktop */}
                 <div className="md:order-2 md:text-left mb-2 md:mb-0">
                   <Badge variant="outline" className="border-primary text-primary mb-2">Ongoing</Badge>
-                  <h3 className="text-2xl font-bold font-display">Java Developer Intern</h3>
+                  <h3 className="text-2xl font-bold font-display">Technical Associate </h3>
                 </div>
 
                 {/* Dot */}
@@ -200,11 +199,11 @@ export default function Home() {
                 <div className="md:order-1 md:text-right bg-card p-6 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-2 mb-4 md:justify-end">
                     <Briefcase className="w-5 h-5 text-primary" />
-                    <span className="font-medium text-foreground">Tech Company</span>
+                    <span className="font-medium text-foreground">Spirecrest Solution Pvt Limited</span>
                   </div>
                   <ul className="space-y-2 text-muted-foreground text-sm leading-relaxed">
                     <li>• Developing backend logic with Spring Boot & REST APIs</li>
-                    <li>• Integrating PostgreSQL databases with Hibernate/JPA</li>
+                    <li>• Integrating PostgreSQL databases</li>
                     <li>• Collaborating on real-world project modules</li>
                   </ul>
                 </div>
@@ -223,29 +222,29 @@ export default function Home() {
             <ProjectCard 
               title="Expense Tracker"
               description="A full-stack application to track personal finances. Built with Spring Boot backend for robust data handling and secure API endpoints."
-              tags={["Spring Boot", "Java", "PostgreSQL", "React", "REST API"]}
-              links={{ github: "#", demo: "#" }}
+              tags={["Spring Boot", "Java", "Jpa", "Thymeleaf", "REST API"]}
+              links={{ github: "https://github.com/vaibhavidhenge23/Expense-Tracker-springboot-", demo: "#" }}
               delay={0}
             />
             <ProjectCard 
-              title="Quiz / Interview Prep System"
+              title="Quiz Application"
               description="A microservices-based platform designed for technical interview preparation. Features modular services for user management, questions, and scoring."
-              tags={["Microservices", "Spring Cloud", "Java", "Docker", "MySQL"]}
-              links={{ github: "#" }}
+              tags={["Microservices", "Spring-boot", "Java", "Server", "PostgreSQl"]}
+              links={{ github: "https://github.com/vaibhavidhenge23/QuizProject-MicroServices-" }}
               delay={0.1}
             />
             <ProjectCard 
-              title="Lost & Found Portal"
-              description="A community portal to report and find lost items. Implements secure authentication and image handling for item verification."
-              tags={["Java", "Spring MVC", "Thymeleaf", "Hibernate"]}
-              links={{ github: "#" }}
+              title="E-Commerce "
+              description="A microservices-based e-commerce platform to see products, add product to cart and purchase. Implements secure authentication and Easy use."
+              tags={["Java", "Spring MVC", "postgreSQl", "Eureka"]}
+              links={{ github: "https://github.com/vaibhavidhenge23/E-Commerce-micro-Services-" }}
               delay={0.2}
             />
             <ProjectCard 
               title="Weather Application"
               description="Real-time weather dashboard fetching data from external APIs. Demonstrates effective third-party API integration and responsive UI design."
-              tags={["React", "OpenWeatherAPI", "CSS3", "Axios"]}
-              links={{ github: "#", demo: "#" }}
+              tags={["Java", "OpenWeatherAPI", "CSS3",,"Thymeleaf", "HTML"]}
+              links={{ github: "https://github.com/vaibhavidhenge23/Weather-application", demo: "#" }}
               delay={0.3}
             />
           </div>
@@ -370,13 +369,13 @@ export default function Home() {
                   </div>
                   <span className="font-medium">vaibhavidhenge2302@gmail.com</span>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
+                <a href="https://www.linkedin.com/in/vaibhavi-dhenge" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
                   <div className="p-3 bg-background rounded-lg border border-border group-hover:border-primary/50 transition-colors">
                     <Linkedin className="w-6 h-6 text-accent" />
                   </div>
                   <span className="font-medium">LinkedIn Profile</span>
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
+                <a href="https://github.com/vaibhavidhenge23" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group">
                   <div className="p-3 bg-background rounded-lg border border-border group-hover:border-primary/50 transition-colors">
                     <Github className="w-6 h-6 text-accent" />
                   </div>
@@ -401,7 +400,7 @@ export default function Home() {
                       <FormItem>
                         <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" className="h-12" {...field} />
+                          <Input placeholder="Your name" className="h-12" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -414,7 +413,7 @@ export default function Home() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="john@example.com" type="email" className="h-12" {...field} />
+                          <Input placeholder="enter your email" type="email" className="h-12" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -427,7 +426,7 @@ export default function Home() {
                       <FormItem>
                         <FormLabel>Message</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Hello! I'd like to discuss..." className="min-h-[150px] resize-none" {...field} />
+                          <Textarea placeholder="Type your message here!!" className="min-h-[150px] resize-none" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -451,10 +450,10 @@ export default function Home() {
       <footer className="py-12 border-t border-border bg-card/50 backdrop-blur-sm text-center">
         <div className="container mx-auto px-4">
           <div className="flex justify-center gap-6 mb-8">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://github.com/vaibhavidhenge23" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/vaibhavi-dhenge" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
             <a href="mailto:vaibhavidhenge2302@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
@@ -462,7 +461,7 @@ export default function Home() {
             </a>
           </div>
           <p className="text-muted-foreground text-sm font-medium tracking-wide">
-            © {new Date().getFullYear()} VAIBHAVI. Built with Passion & Code.
+            © {new Date().getFullYear()} VAIBHAVI
           </p>
         </div>
       </footer>

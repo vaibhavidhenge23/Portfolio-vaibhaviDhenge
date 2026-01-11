@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, Code2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { name: "About", to: "about" },
@@ -38,12 +38,10 @@ export default function Navigation() {
           duration={500}
           className="cursor-pointer flex items-center gap-2 group"
         >
-          <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-            <Code2 className="w-6 h-6 text-primary" />
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight">
-            Vaibhavi<span className="text-primary">.dev</span>
-          </span>
+       
+         <h1 className="logo"></h1>
+
+       
         </Link>
 
         {/* Desktop Nav */}
@@ -61,14 +59,14 @@ export default function Navigation() {
               {item.name}
             </Link>
           ))}
-          <a
-            href="/resume.pdf"
+         {/*} <a
+            href="resume_vaibhavi.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors cursor-pointer shadow-lg shadow-primary/25"
           >
             View Resume
-          </a>
+          </a>*/}
         </div>
 
         {/* Mobile Toggle */}
