@@ -99,7 +99,7 @@ export default function Home() {
                 <a href="#projects">View Projects</a>
               </Button>
               <Button variant="outline" size="lg" className="text-base px-8 h-12 hover:-translate-y-1 transition-transform">
-                <a href="#contact">Contact Me</a>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
               </Button>
             </motion.div>
           </div>

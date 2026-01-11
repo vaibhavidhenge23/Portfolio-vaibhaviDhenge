@@ -61,14 +61,14 @@ export default function Navigation() {
               {item.name}
             </Link>
           ))}
-          <Link
-            to="contact"
-            smooth={true}
-            duration={500}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors cursor-pointer shadow-lg shadow-primary/25"
           >
-            Hire Me
-          </Link>
+            View Resume
+          </a>
         </div>
 
         {/* Mobile Toggle */}
